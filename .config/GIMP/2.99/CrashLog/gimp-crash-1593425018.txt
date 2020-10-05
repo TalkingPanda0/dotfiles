@@ -1,4 +1,0 @@
-
-# Stack traces obtained from PID 6724 - Thread 6724 #
-
-No threads.
