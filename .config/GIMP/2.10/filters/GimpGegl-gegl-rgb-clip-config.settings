@@ -1,0 +1,10 @@
+# settings
+
+(GimpGegl-gegl-rgb-clip-config "2020-07-29 16:32:04"
+    (time 1596029524)
+    (clip-low yes)
+    (low-limit 0.83899999999999997)
+    (clip-high yes)
+    (high-limit -3.774))
+
+# end of settings

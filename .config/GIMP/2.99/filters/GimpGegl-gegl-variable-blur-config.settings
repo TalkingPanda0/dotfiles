@@ -1,0 +1,9 @@
+# settings
+
+(GimpGegl-gegl-variable-blur-config "2020-06-29 13:11:12"
+    (time 1593425472)
+    (radius 197.56)
+    (linear-mask yes)
+    (high-quality yes))
+
+# end of settings
