@@ -52,13 +52,18 @@ MENU="$(rofi -no-lazy-grab -sep "|" -dmenu -i -p 'System :' \
 -color-normal "$BACKGROUND_ALT,$FOREGROUND,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
 -color-active "$BACKGROUND,$MAGENTA,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
 -color-urgent "$BACKGROUND,$YELLOW,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
-<<< "  Lock|  Logout|  Reboot|襤  Shutdown|  Suspend")"
+<<< "  Lock|  Logout|  Reboot|襤  Shutdown|  Suspend| Reboot to Bios| Reboot to Windows| Shutdown when network usage is low| Shutdown when cpu usage is low)"
 case "$MENU" in
   *Lock) betterlockscreen -l ;;
   *Logout) killall Xorg;;
   *Reboot) systemctl reboot ;;
   *Shutdown) shutdown now ;;
-  *Suspend) betterlockscreen -s
+  *Suspend) betterlockscreen -s;;
+  *Bios) systemctl reboot --firmware-setup;;
+  *Windows) sudo grub-reboot 2 && reboot;;
+  *network*)bash ~/.bin/network.sh ;;
+  *cpu*)bash ~/.bin/cpu.sh;;
+  *disk*)bash ~/.bin/disk.sh;;
 
 esac
 
