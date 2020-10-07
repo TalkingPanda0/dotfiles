@@ -1,5 +1,6 @@
 
 import subprocess
+from platform import release
 from typing import List
 from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Screen
@@ -154,10 +155,9 @@ screens = [
                 widget.GroupBox(spacing=3),
                 widget.WindowName(),
                 widget.Spacer(),
-
-
+                #Kernel
+                widget.TextBox(text=release(),background="#A0C1B9"),
                 # CPU
-                #widget.Sep(linewidth=2, background="#ff9800"),
                 widget.Image(filename=f"{configFolder}/resources/cpu.png",
                     background="#ff9800"),
                 widget.CPU(format="{load_percent}%  ", background="#ff9800"),
@@ -171,7 +171,7 @@ screens = [
                     background="#8bc34a"),
 
                 # NET
-                widget.Net(format=" {down} ↓↑ {up}  ", background="#03a9f4"),
+                widget.Net(format="{down} ↓↑ {up}  ", background="#03a9f4"),
 
                 # CLK
                 widget.Clock(format='  ⏲ %I:%M %m-%d (%a) ',
