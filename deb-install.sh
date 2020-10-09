@@ -9,7 +9,7 @@ cp -r .config/* ~/.config/
 cd ~
 sudo add-apt-repository ppa:regolith-linux/unstable -y
 sudo apt-get upgrade
-sudo apt-get install qtile nitrogen termite fonts-roboto rofi picom python-pip i3lock nemo xclip qt5-style-plugins materia-gtk-theme lxappearance xbacklight kde-spectacle nautilus xfce4-power-manager pnmixer network-manager-applet firefox ttf-ms-fonts redshift-gtk gnome-polkit fish -y
+sudo apt-get install qtile nitrogen termite fonts-roboto rofi picom python-pip i3lock nemo xclip qt5-style-plugins materia-gtk-theme lxappearance xbacklight kde-spectacle nautilus xfce4-power-manager pnmixer network-manager-applet firefox redshift-gtk gnome-polkit fish -y
 pip3 install psutil
 wget -qO- https://git.io/papirus-icon-theme-install | sh
 sed -i "s/user/$USER/gi" ~/.config/qtile/qtile.py
