@@ -1,0 +1,8 @@
+set fish_greeting ""
+# Start X at login
+#if [ (pgrep awesome | wc -l ) -lt 1 ]
+ #             exec startx -- -keeptty 
+  #   end
+
+
+
