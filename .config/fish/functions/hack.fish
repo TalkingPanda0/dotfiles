@@ -1,3 +1,5 @@
 function hackle
-	sudo airgeddon
+	while true
+		bash -c "termite -e "cmatrix"&"
+	end
 end
