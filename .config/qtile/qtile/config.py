@@ -1,21 +1,13 @@
 
-from os import system
 import subprocess
-import datetime
-from time import sleep
 from platform import release
 from typing import List
 from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Screen
 from libqtile.lazy import lazy
 
-try:
-    import aiomanhole
-except ImportError:
-    aiomanhole = None
 # defaults
 mod = "mod4"
-
 terminal = "termite"
 browser = "firefox"
 media = "stremio"
@@ -26,13 +18,29 @@ passmanager="bwmenu"
 configFolder = "/home/user/.config/qtile"
 scriptFolder = "/home/user/.bin"
 
+def app_or_group(group, app):
+    """ Go to specified group if it exists. Otherwise, run the specified app.
+    When used in conjunction with dgroups to auto-assign apps to specific
+    groups, this can be used as a way to go to an app if it is already
+    running. """
+    def f(qtile):
+        try:
+            qtile.groups_map[group].cmd_toscreen()
+            qtile.cmd_spawn(app)
+        except KeyError:
+            qtile.cmd_spawn(app)
+    return f
+
+
+
 keys = [
     # Switch between windows in current stack pane
     Key([mod], "k", lazy.layout.down(),
         desc="Move focus down in stack pane"),
     Key([mod], "j", lazy.layout.up(),
         desc="Move focus up in stack pane"),
-        # Move windows up or down in current stack
+
+    # Move windows up or down in current stack
     Key([mod, "control"], "k", lazy.layout.shuffle_down(),
         desc="Move window down in current stack "),
     Key([mod, "control"], "j", lazy.layout.shuffle_up(),
@@ -52,7 +60,6 @@ keys = [
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Full screen"),
     #programs
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod,"mod1"], "Return", lazy.spawn("termite -e cmatrix "), desc="Launch terminal"),
     Key([mod], "b", lazy.spawn(browser), desc="Launch browser"),
     Key([mod], "e", lazy.spawn(fileManager), desc="Launch file manager"),
     Key([mod], "m", lazy.function(media), desc="Launch media player"),
@@ -80,16 +87,13 @@ keys = [
     # Sound
     Key([mod], "Up", lazy.spawn("pulsemixer --change-volume +5"),),
     Key([mod], "Down", lazy.spawn("pulsemixer --change-volume -5")),
-    Key(["mod1"], "Up", lazy.spawn("playerctl volume 0.05+"),),
-    Key(["mod1"], "Down", lazy.spawn("playerctl volume 0.05-")),
     Key([mod], "x", lazy.spawn("pulsemixer --toggle-mute")),
     Key([mod], "Right", lazy.spawn("playerctl next")),
     Key([mod], "Left", lazy.spawn("playerctl previous")),
     Key([mod], "z", lazy.spawn("playerctl play-pause")),
 
     # shutdown
-    Key([mod, "shift"], "Escape", lazy.spawn(f"{scriptFolder}/sysmenu_full"), desc="shutdown settings"),
-
+   Key([mod, "shift"], "Escape", lazy.spawn(f"{scriptFolder}/sysmenu_full"), desc="shutdown settings"),
 
 
     # printScreen
@@ -153,28 +157,14 @@ screens = [
                 widget.Spacer(),
                 #Kernel
                 widget.TextBox(text=release(),background="#A0C1B9"),
-            
                 # CPU
                 widget.Image(filename=f"{configFolder}/resources/cpu.png",
                     background="#ff9800"),
                 widget.CPU(format="{load_percent}%  ", background="#ff9800"),
-                # media
-                #widget.TextBox(text=system('playerctl metadata --format "Now playing: {{ artist }} - {{ album }} - {{ title }}"')),
-                #widget.TextBox(TEST),
-                 widget.Mpris2(
-                    background="#F2EA4E",
-                    foreground="#000000",
-                    name='vlc',
-                    stop_pause_text='',
-                    fontsize=10,
-                    scroll_chars=None,
-                    display_metadata=['xesam:title', 'xesam:artist'],
-                    objname="org.mpris.MediaPlayer2.vlc",
-                ),
-
 
                 # MEM
-                widget.Sep(linewidth=4, foreground="#8bc34a", background="#8bc34a"),
+                widget.Sep(linewidth=4, foreground="#8bc34a",
+                    background="#8bc34a"),
                 widget.Image(filename=f"{configFolder}/resources/memory.png",
                     background="#8bc34a"),
                 widget.Memory(format="{MemUsed}M | {SwapUsed}M ",
@@ -228,9 +218,9 @@ floating_layout = layout.Floating(float_rules=[
     {'wmclass': 'ssh-askpass'},  # ssh-askpass
 ])
 
-
 @hook.subscribe.startup_once
 def autostart():
+    lazy.function(app_or_group("4", "lutris")),
     subprocess.Popen(f"{scriptFolder}/autostart.sh")
 
 
