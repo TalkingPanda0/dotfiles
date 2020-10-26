@@ -19,7 +19,7 @@ cp  -r .bin ~/
 chmod +x ~/.bin/*
 cp -r .config/* ~/.config/
 cd ~/
-yay -S python3-pip qtile rofi picom termite i3lock-fancy qtile nemo nitrogen xclip polkit-gnome materia-gtk-theme qt5-styleplugins lxappearance flameshot pnmixer xfce4-power-manager firefox redshift-gtk-git -y
+yay -S python3-pip qtile rofi picom termite i3lock-fancy qtile nemo nitrogen xclip lxsession materia-gtk-theme qt5-styleplugins lxappearance flameshot pnmixer xfce4-power-manager firefox redshift-gtk-git -y
 pip3 install psutil
 wget -qO- https://git.io/papirus-icon-theme-install | sh
 sed -i "s/user/$USER/gi" ~/.config/qtile/qtile.py

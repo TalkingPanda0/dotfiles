@@ -8,7 +8,7 @@ function run {
   fi
 }
 ~/.bin/mouse.sh
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+run lxsession &
 run flameshot &
 #run steam -silent &
 run pnmixer &
