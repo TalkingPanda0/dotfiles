@@ -54,11 +54,11 @@ MENU="$(rofi -no-lazy-grab -sep "|" -dmenu -i -p 'System :' \
 -color-urgent "$BACKGROUND,$YELLOW,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
 <<< "  Lock|  Logout|  Reboot|襤  Shutdown|  Suspend| Reboot to Bios| Reboot to Windows| Shutdown when network usage is low| Shutdown when cpu usage is low")"
 case "$MENU" in
-  *Lock) betterlockscreen -l ;;
+  *Lock) xflock4 ;;
   *Logout) killall Xorg;;
   *Reboot) systemctl reboot ;;
   *Shutdown) shutdown now ;;
-  *Suspend) betterlockscreen -s;;
+  *Suspend) xflock4 && systemctl suspend;;
   *Bios) systemctl reboot --firmware-setup;;
   *Windows) sudo grub-reboot 2 && reboot;;
   *network*)bash ~/.bin/network.sh ;;

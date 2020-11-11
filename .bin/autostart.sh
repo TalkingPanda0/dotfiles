@@ -12,7 +12,9 @@ run lxsession &
 run flameshot &
 #run steam -silent &
 run pnmixer &
-run picom --experimental-backends &
+run picom &
+run kdeconnect-indicator &
+run /usr/lib/kdeconnectd
 run redshift-gtk &
 run xfce4-power-manager &
 #run discord --start-minimized &

@@ -1,3 +1,3 @@
 #!/bin/sh
 
-xinput set-prop 11 "libinput Accel Speed" -1
+xinput set-prop 12 "libinput Accel Speed" -1
