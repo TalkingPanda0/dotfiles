@@ -34,7 +34,6 @@
       <property name="&lt;Super&gt;Return" type="string" value="alacritty"/>
       <property name="&lt;Super&gt;r" type="string" value="xfce4-appfinder"/>
       <property name="&lt;Super&gt;b" type="string" value="exo-open --launch WebBrowser"/>
-      <property name="&lt;Super&gt;m" type="string" value="strawberry"/>
       <property name="&lt;Super&gt;e" type="string" value="nemo"/>
       <property name="&lt;Alt&gt;Super_L" type="empty">
         <property name="startup-notify" type="bool" value="true"/>
@@ -42,10 +41,8 @@
       <property name="&lt;Alt&gt;r" type="string" value="xfce4-appfinder --collapsed">
         <property name="startup-notify" type="bool" value="true"/>
       </property>
-      <property name="&lt;Super&gt;l" type="string" value="xflock4"/>
       <property name="&lt;Super&gt;g" type="string" value="lutris"/>
       <property name="&lt;Super&gt;c" type="string" value="bwmenu"/>
-      <property name="&lt;Super&gt;s" type="string" value="xflock4 &amp;&amp; systemctl suspend"/>
       <property name="&lt;Super&gt;Up" type="string" value="pulsemixer --change-volume +5"/>
       <property name="&lt;Super&gt;Down" type="string" value="pulsemixer --change-volume -5"/>
       <property name="&lt;Alt&gt;Up" type="string" value="playerctl volume 0.05+"/>
@@ -59,6 +56,11 @@
       <property name="Print" type="string" value="flameshot gui"/>
       <property name="&lt;Shift&gt;&lt;Super&gt;Escape" type="string" value="xfce4-session-logout"/>
       <property name="PowerOff" type="string" value="xfce4-session-logout"/>
+      <property name="&lt;Alt&gt;b" type="string" value="qutebrowser"/>
+      <property name="&lt;Super&gt;l" type="string" value="betterlockscreen -s"/>
+      <property name="Scroll_Lock" type="string" value="betterlockscreen -s"/>
+      <property name="&lt;Super&gt;m" type="string" value="stremio"/>
+      <property name="&lt;Super&gt;t" type="string" value="idea"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
@@ -125,7 +127,6 @@
       <property name="&lt;Shift&gt;&lt;Alt&gt;Page_Down" type="string" value="lower_window_key"/>
       <property name="&lt;Alt&gt;Tab" type="string" value="cycle_windows_key"/>
       <property name="&lt;Primary&gt;&lt;Shift&gt;&lt;Alt&gt;Right" type="string" value="move_window_right_key"/>
-      <property name="&lt;Alt&gt;F10" type="string" value="maximize_window_key"/>
       <property name="&lt;Alt&gt;F6" type="string" value="stick_window_key"/>
       <property name="&lt;Super&gt;Tab" type="string" value="switch_window_key"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;d" type="string" value="show_desktop_key"/>
@@ -157,7 +158,6 @@
       <property name="&lt;Shift&gt;&lt;Super&gt;exclam" type="string" value="move_window_workspace_1_key"/>
       <property name="&lt;Shift&gt;&lt;Super&gt;apostrophe" type="string" value="move_window_workspace_2_key"/>
       <property name="&lt;Shift&gt;&lt;Super&gt;asciicircum" type="string" value="move_window_workspace_3_key"/>
-      <property name="&lt;Shift&gt;&lt;Super&gt;plus" type="string" value="move_window_workspace_4_key"/>
       <property name="&lt;Shift&gt;&lt;Super&gt;percent" type="string" value="move_window_workspace_5_key"/>
       <property name="&lt;Shift&gt;&lt;Super&gt;ampersand" type="string" value="move_window_workspace_6_key"/>
       <property name="&lt;Shift&gt;&lt;Super&gt;slash" type="string" value="move_window_workspace_7_key"/>
@@ -165,6 +165,8 @@
       <property name="&lt;Shift&gt;&lt;Super&gt;parenright" type="string" value="move_window_workspace_9_key"/>
       <property name="&lt;Super&gt;f" type="string" value="fullscreen_key"/>
       <property name="&lt;Super&gt;q" type="string" value="close_window_key"/>
+      <property name="&lt;Shift&gt;&lt;Super&gt;plus" type="string" value="move_window_workspace_4_key"/>
+      <property name="&lt;Shift&gt;&lt;Super&gt;Up" type="string" value="maximize_window_key"/>
     </property>
   </property>
   <property name="providers" type="array">

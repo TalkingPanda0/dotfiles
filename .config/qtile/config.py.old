@@ -7,7 +7,6 @@ from typing import List
 from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Screen
 from libqtile.lazy import lazy
-import os 
 # defaults
 mod = "mod4"
 
@@ -17,7 +16,6 @@ media = "stremio"
 fileManager = "nemo"
 game="lutris"
 ide = "idea"
-photo = "gimp-2.99"
 passmanager="bwmenu"
 configFolder = "/home/user/.config/qtile"
 scriptFolder = "/home/user/.bin"
@@ -53,7 +51,6 @@ keys = [
     Key([mod], "e", lazy.spawn(fileManager), desc="Launch file manager"),
     Key([mod], "m", lazy.spawn(media), desc="Launch media player"),
     Key([mod], "t", lazy.spawn(ide), desc="Launch IDE"),
-    Key([mod], "y", lazy.spawn(photo), desc="Launch Photo Editor"), 
     Key([mod], "g", lazy.spawn(game), desc="Launch Games"),
     Key([mod], "p", lazy.spawn(passmanager), desc="Launch passmanager"),
     # Toggle between different layouts as defined below
@@ -63,15 +60,15 @@ keys = [
     # Qtile controls
     Key([mod, "control"], "r", lazy.restart(), desc="Restart qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown qtile"),
-    Key([], "Scroll_Lock", lazy.spawn("betterlockscreen -l")),
-    Key([], "Pause", lazy.spawn("betterlockscreen -s")),
+    Key([], "Pause", lazy.spawn("betterlockscreen -l")),
+    Key([], "Scroll_Lock", lazy.spawn("betterlockscreen -s")),
     # dmenu
-    Key([mod], "r", lazy.spawn("dmenu_run"),
+    Key(["mod1"], "r", lazy.spawn("dmenu_run"),
         desc="Spawn a command using a prompt widget"),
 
     # rofi
-    # Key([mod], "r", lazy.spawn("rofi -combi-modi window,drun,ssh -theme solarized -show combi -icon-theme Papirus -show-icons"),
-     #    desc="Spawn a command using a prompt widget"),
+     Key([mod], "r", lazy.spawn("rofi -combi-modi window,drun,ssh -theme solarized -show combi -icon-theme Papirus -show-icons"),
+         desc="Spawn a command using a prompt widget"),
 
 
     # Sound
@@ -95,12 +92,17 @@ keys = [
 
 
 groups = [
-    Group("1", label="www" ),
-    Group("2", label="dev"),
-    Group("3", label="msg"),
-    Group("4", label="gam"),
-    Group("5", label="fil"),
-    Group("6", label="msc"),
+    Group("1", label="🌐" ),
+    Group("2", label="{}"),
+    Group("3", label="💬"),
+    Group("4", label="🎮"),
+    Group("5", label="📁"),
+    Group("6"),
+    Group("7"),
+    Group("8"),
+    Group("9"),
+    Group("0")
+
 ]
 
 for i in groups:
@@ -131,7 +133,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font='Ubuntu Mono',
+    font='xos4 Terminus Regular',
     fontsize=12,
     padding=3,
 )
@@ -139,31 +141,50 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
+        bottom=bar.Bar(
+            [
+               #widget.GroupBox(spacing=3),
+                widget.WindowName(),
+               #widget.Spacer(),
+                #Kernel
+                widget.TextBox(text=release(),background="#A0C1B9"),
+            
+                # CPU
+                widget.Image(filename=f"{configFolder}/resources/cpu.png",
+                    background="#ff9800"),
+                widget.CPU(format="{load_percent}%  ", background="#ff9800"),
+                # media
+                #widget.TextBox(text=system('playerctl metadata --format "Now playing: {{ artist }} - {{ album }} - {{ title }}"')),
+                #widget.TextBox(TEST),
+               
+                # MEM
+                widget.Sep(linewidth=4, foreground="#8bc34a", background="#8bc34a"),
+                widget.Image(filename=f"{configFolder}/resources/memory.png",
+                    background="#8bc34a"),
+                widget.Memory(format="{MemUsed}M | {SwapUsed}M ",
+                    background="#8bc34a"),
+                
+
+
+                # NET
+                widget.Net(format="{down} ↓↑ {up}  ", background="#03a9f4"),
+
+                # CLK
+                widget.Clock(format='  ⏲ %I:%M %m-%d (%a) ',
+                    background="#e91e63"),
+
+                # SYSTRAY
+               #widget.Systray(background="#009688")
+            ],
+            20,
+        ),
         top=bar.Bar(
             [
-            widget.Sep(linewidth= 0,padding=6,background="#292d3e"),
-            widget.GroupBox(spacing=3,background="#292d3e",highlight_method="block",font="nerd-fonts-terminus"),
-            widget.WindowName(background="#292d3e",foreground="#e1acff"),
-            widget.Spacer(background="#292d3e"),
-            widget.TextBox(text="",background="#292d3e",foreground="#668bd7",padding=-9,fontsize=45),
-            widget.ThermalSensor(background="#668bd7"),
-            widget.TextBox(text="",background="#668bd7",foreground="#8d62a9",padding=-9,fontsize=45),        
-            widget.Net(format="{down} ↓↑ {up}  ", background="#8d62a9",padding=0),
-            widget.TextBox(text="",background="#8d62a9",foreground="#668bd7",padding=-9,fontsize=45),
-            widget.CurrentLayoutIcon(custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
-                background = "#668bd7",
-                padding = 0,scale = 0.7),
-            widget.CurrentLayout(
-                foreground = "#ffffff",
-                background = "#668bd7",
-                padding = 5
-            ),
-            widget.TextBox(text="",background="#668bd7",foreground="#8d62a9",padding=-9,fontsize=45),
-            widget.Systray(background="#8d62a9"),
-            widget.TextBox(text="",background="#8d62a9",foreground="#668bd7",padding=-9,fontsize=45),
-            widget.Clock(format='  ⏲ %I:%M %m-%d (%a) ', background="#668bd7",padding=0),
+            widget.GroupBox(spacing=3),
+            widget.Spacer(),
+            widget.Systray()
             ],
-            17,
+            20,
             ),
     ),
     ]

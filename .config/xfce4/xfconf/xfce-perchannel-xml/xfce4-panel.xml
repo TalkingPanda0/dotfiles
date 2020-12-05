@@ -10,20 +10,19 @@
       <property name="length" type="uint" value="100"/>
       <property name="position-locked" type="bool" value="true"/>
       <property name="icon-size" type="uint" value="0"/>
-      <property name="size" type="uint" value="26"/>
+      <property name="size" type="uint" value="25"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="4"/>
+        <value type="int" value="41"/>
         <value type="int" value="5"/>
+        <value type="int" value="1"/>
+        <value type="int" value="2"/>
         <value type="int" value="25"/>
         <value type="int" value="6"/>
         <value type="int" value="8"/>
-        <value type="int" value="9"/>
-        <value type="int" value="10"/>
         <value type="int" value="11"/>
         <value type="int" value="12"/>
         <value type="int" value="13"/>
-        <value type="int" value="14"/>
-        <value type="int" value="24"/>
       </property>
       <property name="mode" type="uint" value="0"/>
       <property name="autohide-behavior" type="uint" value="0"/>
@@ -36,6 +35,9 @@
         <value type="double" value="0.325490"/>
         <value type="double" value="1.000000"/>
       </property>
+      <property name="enter-opacity" type="uint" value="100"/>
+      <property name="leave-opacity" type="uint" value="100"/>
+      <property name="length-adjust" type="bool" value="true"/>
     </property>
     <property name="panel-2" type="empty">
       <property name="autohide-behavior" type="uint" value="1"/>
@@ -64,6 +66,8 @@
   <property name="plugins" type="empty">
     <property name="plugin-4" type="string" value="pager">
       <property name="rows" type="uint" value="1"/>
+      <property name="workspace-scrolling" type="bool" value="false"/>
+      <property name="miniature-view" type="bool" value="false"/>
     </property>
     <property name="plugin-5" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
@@ -73,6 +77,18 @@
       <property name="show-frame" type="bool" value="false"/>
       <property name="square-icons" type="bool" value="true"/>
       <property name="names-ordered" type="array">
+        <value type="string" value="discord"/>
+        <value type="string" value="zoom"/>
+        <value type="string" value="stremio"/>
+        <value type="string" value="steam"/>
+        <value type="string" value="task manager"/>
+        <value type="string" value="vlc"/>
+        <value type="string" value="javaembeddedframe"/>
+        <value type="string" value="redshiftgui.elf"/>
+        <value type="string" value="clipman"/>
+        <value type="string" value="rambox"/>
+        <value type="string" value="obs"/>
+        <value type="string" value="strawberry"/>
         <value type="string" value="lutris"/>
         <value type="string" value="redshift-gtk"/>
         <value type="string" value="kde connect indicator"/>
@@ -84,25 +100,24 @@
     <property name="plugin-8" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="show-notifications" type="bool" value="true"/>
+      <property name="mpris-players" type="string" value="chromium.instance640;chromium.instance649;chromium.instance650;chromium.instance652;chromium.instance653;chromium.instance689;firefox.instance1028;firefox.instance1050;firefox.instance1103;firefox.instance11427;firefox.instance12800;firefox.instance13459;firefox.instance14088;firefox.instance15415;firefox.instance1716;firefox.instance17453;firefox.instance1798;firefox.instance20269;firefox.instance2235;firefox.instance2285;firefox.instance2343;firefox.instance2596;firefox.instance2846;firefox.instance2876;firefox.instance2891;firefox.instance3087;firefox.instance3319;firefox.instance35440;firefox.instance3619;firefox.instance3978;firefox.instance4214;firefox.instance4727;firefox.instance4805;firefox.instance4823;firefox.instance5260;firefox.instance6087;firefox.instance6365;firefox.instance6605;firefox.instance7026;firefox.instance7371;firefox.instance7568;firefox.instance762;firefox.instance771;firefox.instance8019;firefox.instance8054;firefox.instance823;firefox.instance841;firefox.instance8499;firefox.instance8598;firefox.instance9411;firefox.instance959;firefox.instance9970;kdeconnect.mpris_133cd098ded34ceda989e9cd958aa22b;kdeconnect.mpris_1953942886dc4d249fd815462257630e;kdeconnect.mpris_2e7d6c3ccc734860b3b92493ac9d6da1;kdeconnect.mpris_37b4c9ff48fa42679b25fd2459ac083a;kdeconnect.mpris_4446c5ad598148fe8d6b45b13a6fd4fd;kdeconnect.mpris_528fe396131b43b19fa8fdbc372eb3e3;kdeconnect.mpris_586d4c7857ef43d4a095dcc48a6e4ccf;kdeconnect.mpris_630eef7636b845cda873e5218c2e2a03;kdeconnect.mpris_758234ffe4ee45e49665ad695daf6773;kdeconnect.mpris_9a1963f47ab64e77b6e6b547f039c366;kdeconnect.mpris_a9a37f1b9bda4747aa29c41ae75f0ebb;kdeconnect.mpris_b4b4ac1405514d33b6f7efafb92b4f5d;kdeconnect.mpris_bf0fe5418d9f48b79e9518c7a3185080;kdeconnect.mpris_cab59d6d667a4ad994a85f2d14812bb3;kdeconnect.mpris_db3280ff51ff42d2bcfef2d1dfc78aa2;kdeconnect.mpris_db5deec1f8a045b289ec7c2008512705;kdeconnect.mpris_e212920cee5e4adab3b1008197c352b5;qutebrowser.instance12032;qutebrowser.instance12802;qutebrowser.instance1475;qutebrowser.instance20794;qutebrowser.instance24433;qutebrowser.instance52452;qutebrowser.instance5548;strawberry;vlc"/>
     </property>
-    <property name="plugin-9" type="string" value="power-manager-plugin"/>
-    <property name="plugin-10" type="string" value="notification-plugin"/>
     <property name="plugin-11" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
     </property>
     <property name="plugin-12" type="string" value="clock">
       <property name="mode" type="uint" value="2"/>
+      <property name="digital-format" type="string" value="%I:%M %p"/>
+      <property name="timezone" type="string" value="+3"/>
     </property>
     <property name="plugin-13" type="string" value="separator">
       <property name="style" type="uint" value="0"/>
     </property>
-    <property name="plugin-14" type="string" value="actions"/>
     <property name="plugin-15" type="string" value="showdesktop"/>
     <property name="plugin-16" type="string" value="separator"/>
     <property name="plugin-22" type="string" value="directorymenu">
       <property name="base-directory" type="string" value="/home/user"/>
     </property>
-    <property name="plugin-24" type="string" value="xfce4-mount-plugin"/>
     <property name="plugin-25" type="string" value="netload"/>
     <property name="plugin-26" type="string" value="launcher">
       <property name="items" type="array">
@@ -124,5 +139,18 @@
         <value type="string" value="16051349395.desktop"/>
       </property>
     </property>
+    <property name="plugin-41" type="string" value="tasklist"/>
+    <property name="clipman" type="empty">
+      <property name="settings" type="empty">
+        <property name="add-primary-clipboard" type="bool" value="false"/>
+        <property name="show-qr-code" type="bool" value="false"/>
+        <property name="enable-actions" type="bool" value="false"/>
+      </property>
+      <property name="tweaks" type="empty">
+        <property name="never-confirm-history-clear" type="bool" value="false"/>
+      </property>
+    </property>
+    <property name="plugin-1" type="string" value="fsguard"/>
+    <property name="plugin-2" type="string" value="systemload"/>
   </property>
 </channel>

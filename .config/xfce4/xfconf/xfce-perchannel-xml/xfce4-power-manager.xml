@@ -21,5 +21,7 @@
     <property name="dpms-on-ac-sleep" type="uint" value="50"/>
     <property name="brightness-level-on-ac" type="uint" value="82"/>
     <property name="brightness-on-ac" type="uint" value="9"/>
+    <property name="lock-screen-suspend-hibernate" type="bool" value="true"/>
+    <property name="show-panel-label" type="int" value="0"/>
   </property>
 </channel>
