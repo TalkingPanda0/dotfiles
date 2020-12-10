@@ -30,7 +30,7 @@ echo "Installing:
 Desktop Env ironment: $de
 Terminal: $term
 Browser: $www "
-yay -S python3-pip qtile rofi picom termite betterlockscreen qtile nemo nitrogen xclip lxsession materia-gtk-theme qt5-styleplugins lxappearance flameshot pnmixer xfce4-volumed-pulse firefox redshift-gtk-git $de $term $www -y
+yay -S picom-jonaburg-git python3-pip qtile rofi picom termite betterlockscreen qtile nemo nitrogen xclip lxsession materia-gtk-theme qt5-styleplugins lxappearance flameshot pnmixer xfce4-volumed-pulse firefox redshift-gtk-git $de $term $www -y
 pip3 install psutil
 wget -qO- https://git.io/papirus-icon-theme-install | sh
 sed -i "s/user/$USER/gi" ~/.config/qtile/qtile.py
