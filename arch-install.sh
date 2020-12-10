@@ -1,4 +1,5 @@
 #!/bin/bash
+a=0
 if [[ $(id -u) == "0" ]]
 then
     echo "this script shouldn't run as root"
@@ -19,10 +20,18 @@ cp  -r .bin ~/
 chmod +x ~/.bin/*
 cp -r .config/* ~/.config/
 cd ~/
-yay -S python3-pip qtile rofi picom termite i3lock-fancy qtile nemo nitrogen xclip lxsession materia-gtk-theme qt5-styleplugins lxappearance flameshot pnmixer xfce4-power-manager firefox redshift-gtk-git -y
+echo "Type a Desktop Environment Package name "
+read de
+echo "Type Terminal Package name"
+read term
+echo "Type Browser Package name"
+read www
+echo "Installing:
+Desktop Env ironment: $de
+Terminal: $term
+Browser: $www "
+yay -S python3-pip qtile rofi picom termite betterlockscreen qtile nemo nitrogen xclip lxsession materia-gtk-theme qt5-styleplugins lxappearance flameshot pnmixer xfce4-volumed-pulse firefox redshift-gtk-git $de $term $www -y
 pip3 install psutil
 wget -qO- https://git.io/papirus-icon-theme-install | sh
 sed -i "s/user/$USER/gi" ~/.config/qtile/qtile.py
-sudo echo "XDG_CURRENT_DESKTOP=Unity
-QT_QPA_PLATFORMTHEME=gtk2"  >> /etc/environment
 echo "done"

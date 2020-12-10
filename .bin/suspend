@@ -1,0 +1,2 @@
+#!/usr/bin/fish
+xflock4 && systemctl suspend
