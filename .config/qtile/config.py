@@ -70,7 +70,7 @@ keys = [
      #   desc="Spawn a command using a prompt widget"),
 
     # rofi
-     Key([mod], "r", lazy.spawn("rofi -combi-modi window,drun,ssh -theme solarized -show combi -icon-theme Papirus -show-icons"),
+     Key([mod], "r", lazy.spawn("rofi -show combi"),
          desc="Spawn a command using a prompt widget"),
 
 
