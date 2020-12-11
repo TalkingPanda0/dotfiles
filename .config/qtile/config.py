@@ -7,7 +7,7 @@ from typing import List
 from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Screen
 from libqtile.lazy import lazy
-import os 
+import os
 # defaults
 mod = "mod4"
 
@@ -53,7 +53,7 @@ keys = [
     Key([mod], "e", lazy.spawn(fileManager), desc="Launch file manager"),
     Key([mod], "m", lazy.spawn(media), desc="Launch media player"),
     Key([mod], "t", lazy.spawn(ide), desc="Launch IDE"),
-    Key([mod], "y", lazy.spawn(photo), desc="Launch Photo Editor"), 
+    Key([mod], "y", lazy.spawn(photo), desc="Launch Photo Editor"),
     Key([mod], "g", lazy.spawn(game), desc="Launch Games"),
     Key([mod], "p", lazy.spawn(passmanager), desc="Launch passmanager"),
     # Toggle between different layouts as defined below
@@ -66,12 +66,12 @@ keys = [
     Key([], "Scroll_Lock", lazy.spawn("betterlockscreen -l")),
     Key([], "Pause", lazy.spawn("betterlockscreen -s")),
     # dmenu
-    Key([mod], "r", lazy.spawn("dmenu_run"),
-        desc="Spawn a command using a prompt widget"),
+    #Key([mod], "r", lazy.spawn("dmenu_run"),
+     #   desc="Spawn a command using a prompt widget"),
 
     # rofi
-    # Key([mod], "r", lazy.spawn("rofi -combi-modi window,drun,ssh -theme solarized -show combi -icon-theme Papirus -show-icons"),
-     #    desc="Spawn a command using a prompt widget"),
+     Key([mod], "r", lazy.spawn("rofi -combi-modi window,drun,ssh -theme solarized -show combi -icon-theme Papirus -show-icons"),
+         desc="Spawn a command using a prompt widget"),
 
 
     # Sound
@@ -147,7 +147,7 @@ screens = [
             widget.Spacer(background="#292d3e"),
             widget.TextBox(text="",background="#292d3e",foreground="#668bd7",padding=-9,fontsize=45),
             widget.ThermalSensor(background="#668bd7"),
-            widget.TextBox(text="",background="#668bd7",foreground="#8d62a9",padding=-9,fontsize=45),        
+            widget.TextBox(text="",background="#668bd7",foreground="#8d62a9",padding=-9,fontsize=45),
             widget.Net(format="{down} ↓↑ {up}  ", background="#8d62a9",padding=0),
             widget.TextBox(text="",background="#8d62a9",foreground="#668bd7",padding=-9,fontsize=45),
             widget.CurrentLayoutIcon(custom_icon_paths = [os.path.expanduser("~/.config/qtile/icons")],
