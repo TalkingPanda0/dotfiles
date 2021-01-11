@@ -3,7 +3,8 @@ cp  -r .bin ~/
 chmod +x ~/.bin/*
 cp -r .config/* ~/.config/
 cd ~/
-pip3 install psutil
-wget -qO- https://git.io/papirus-icon-theme-install | sh
-sed -i "s/user/$USER/gi" ~/.config/qtile/qtile.py
+git clone https://github.com/TalkingPanda0/dwm.git && cd dwm && sudo make install
+git clone https://github.com/TalkingPanda0/st.git && cd st && sudo make install
+git clone https://github.com/TalkingPanda0/surf.git && cd surf && sudo make install
+
 echo "done"

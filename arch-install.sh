@@ -20,18 +20,8 @@ cp  -r .bin ~/
 chmod +x ~/.bin/*
 cp -r .config/* ~/.config/
 cd ~/
-echo "Type a Desktop Environment Package name "
-read de
-echo "Type Terminal Package name"
-read term
-echo "Type Browser Package name"
-read www
-echo "Installing:
-Desktop Env ironment: $de
-Terminal: $term
-Browser: $www "
-yay -S picom-jonaburg-git python3-pip qtile rofi picom termite betterlockscreen qtile nemo nitrogen xclip lxsession materia-gtk-theme qt5-styleplugins lxappearance flameshot pnmixer xfce4-volumed-pulse firefox redshift-gtk-git $de $term $www -y
-pip3 install psutil
-wget -qO- https://git.io/papirus-icon-theme-install | sh
-sed -i "s/user/$USER/gi" ~/.config/qtile/qtile.py
+yay -S picom-jonaburg-git python3-pip qtile rofi picom termite betterlockscreen qtile nemo nitrogen xclip lxsession materia-gtk-theme qt5-styleplugins lxappearance flameshot pnmixer xfce4-volumed-pulse firefox redshift-gtk-git -y
+git clone https://github.com/TalkingPanda0/dwm.git && cd dwm && sudo make install
+git clone https://github.com/TalkingPanda0/st.git && cd st && sudo make install
+git clone https://github.com/TalkingPanda0/surf.git && cd surf && sudo make install
 echo "done"
