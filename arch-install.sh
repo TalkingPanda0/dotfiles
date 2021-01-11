@@ -19,6 +19,8 @@ echo "yay Found"
 cp  -r .bin ~/
 chmod +x ~/.bin/*
 cp -r .config/* ~/.config/
+mkdir -p ~/.surf/styles/
+cp default.css ~/.surf/styles/
 cd ~/
 yay -S picom-jonaburg-git python3-pip qtile rofi picom termite betterlockscreen qtile nemo nitrogen xclip lxsession materia-gtk-theme qt5-styleplugins lxappearance flameshot pnmixer xfce4-volumed-pulse firefox redshift-gtk-git -y
 git clone https://github.com/TalkingPanda0/dwm.git && cd dwm && sudo make install

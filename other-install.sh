@@ -2,6 +2,8 @@
 cp  -r .bin ~/
 chmod +x ~/.bin/*
 cp -r .config/* ~/.config/
+mkdir -p ~/.surf/styles/
+cp default.css ~/.surf/styles/
 cd ~/
 git clone https://github.com/TalkingPanda0/dwm.git && cd dwm && sudo make install
 git clone https://github.com/TalkingPanda0/st.git && cd st && sudo make install
