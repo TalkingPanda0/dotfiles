@@ -1,0 +1,7 @@
+accounts.firefox.com:HSTS	0	18643	1642354507534,1,1,2
+firefox.settings.services.mozilla.com:HSTS	0	18643	1642354669764,1,0,2
+www.mozilla.org:HSTS	0	18643	1642354505242,1,0,2
+services.addons.mozilla.org:HSTS	0	18643	1642354542184,1,0,2
+addons.cdn.mozilla.net:HSTS	0	18643	1642354543265,1,1,2
+location.services.mozilla.com:HSTS	0	18643	1642354793315,1,1,2
+www.firefox.com:HSTS	0	18643	1642354507688,1,0,2
