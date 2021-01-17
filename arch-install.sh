@@ -16,7 +16,6 @@ then
     echo "yay installed"
 fi
 echo "yay Found"
-cp  -r wallpaper ~/
 cp  -r .bin ~/
 chmod +x ~/.bin/*
 mkdir -p ~/.config
